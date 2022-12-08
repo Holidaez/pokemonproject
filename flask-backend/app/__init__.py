@@ -9,7 +9,7 @@ app = Flask(__name__)
 db.init_app(app)
 # app.config.from_object(Configuration)
 # app.register_blueprint()
-# Migrate(app, db)
+Migrate(app, db)
 
 # after request code for CSRF token injection
 @app.after_request

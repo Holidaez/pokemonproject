@@ -4,10 +4,13 @@ from flask import Flask
 from flask_wtf.csrf import CSRFProtect, generate_csrf
 from .config import Configuration
 from .models import db
+from flask_migrate import Migrate
+import os
+# db = models.db
 
 app = Flask(__name__)
+app.config.from_object(Configuration)
 db.init_app(app)
-# app.config.from_object(Configuration)
 # app.register_blueprint()
 Migrate(app, db)
 
